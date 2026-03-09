@@ -67,63 +67,31 @@ namespace laba_RPM_2_090326
         }
     }
 
-    public abstract class CircleCreator
+    public interface IShapeFactory
     {
-        public abstract Circle CreateCircle();
+        Circle CreateCircle();
+        Square CreateSquare();
+        Triangle CreateTriangle();
     }
 
-    public class RedCircleCreator : CircleCreator
+    public class RedShapeFactory : IShapeFactory
     {
-        public override Circle CreateCircle() => new Circle { Color = Colors.Red };
+        public Circle CreateCircle() => new Circle { Color = Colors.Red };
+        public Square CreateSquare() => new Square { Color = Colors.Red };
+        public Triangle CreateTriangle() => new Triangle { Color = Colors.Red };
     }
 
-    public class BlueCircleCreator : CircleCreator
+    public class BlueShapeFactory : IShapeFactory
     {
-        public override Circle CreateCircle() => new Circle { Color = Colors.Blue };
+        public Circle CreateCircle() => new Circle { Color = Colors.Blue };
+        public Square CreateSquare() => new Square { Color = Colors.Blue };
+        public Triangle CreateTriangle() => new Triangle { Color = Colors.Blue };
     }
 
-    public class GreenCircleCreator : CircleCreator
+    public class GreenShapeFactory : IShapeFactory
     {
-        public override Circle CreateCircle() => new Circle { Color = Colors.Green };
-    }
-
-    public abstract class SquareCreator
-    {
-        public abstract Square CreateSquare();
-    }
-
-    public class RedSquareCreator : SquareCreator
-    {
-        public override Square CreateSquare() => new Square { Color = Colors.Red };
-    }
-
-    public class BlueSquareCreator : SquareCreator
-    {
-        public override Square CreateSquare() => new Square { Color = Colors.Blue };
-    }
-
-    public class GreenSquareCreator : SquareCreator
-    {
-        public override Square CreateSquare() => new Square { Color = Colors.Green };
-    }
-
-    public abstract class TriangleCreator
-    {
-        public abstract Triangle CreateTriangle();
-    }
-
-    public class RedTriangleCreator : TriangleCreator
-    {
-        public override Triangle CreateTriangle() => new Triangle { Color = Colors.Red };
-    }
-
-    public class BlueTriangleCreator : TriangleCreator
-    {
-        public override Triangle CreateTriangle() => new Triangle { Color = Colors.Blue };
-    }
-
-    public class GreenTriangleCreator : TriangleCreator
-    {
-        public override Triangle CreateTriangle() => new Triangle { Color = Colors.Green };
+        public Circle CreateCircle() => new Circle { Color = Colors.Green };
+        public Square CreateSquare() => new Square { Color = Colors.Green };
+        public Triangle CreateTriangle() => new Triangle { Color = Colors.Green };
     }
 }

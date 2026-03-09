@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:laba_RPM_2_090326"
         mc:Ignorable="d"
-        Title="Factory Method Shapes" Height="450" Width="800">
+        Title="Abstract Factory Shapes" Height="450" Width="800">
     <Grid>
         <StackPanel Margin="10">
             <TextBlock Text="Выберите цвет:" Margin="0,0,0,5"/>

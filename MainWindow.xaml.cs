@@ -17,9 +17,7 @@ namespace laba_RPM_2_090326
 {
     public partial class MainWindow : Window
     {
-        CircleCreator circleCreator;
-        SquareCreator squareCreator;
-        TriangleCreator triangleCreator;
+        private IShapeFactory currentFactory;
 
         public MainWindow()
         {
@@ -39,19 +37,13 @@ namespace laba_RPM_2_090326
             switch (selectedItem.Content.ToString())
             {
                 case "Красный":
-                    circleCreator = new RedCircleCreator();
-                    squareCreator = new RedSquareCreator();
-                    triangleCreator = new RedTriangleCreator();
+                    currentFactory = new RedShapeFactory();
                     break;
                 case "Синий":
-                    circleCreator = new BlueCircleCreator();
-                    squareCreator = new BlueSquareCreator();
-                    triangleCreator = new BlueTriangleCreator();
+                    currentFactory = new BlueShapeFactory();
                     break;
                 case "Зелёный":
-                    circleCreator = new GreenCircleCreator();
-                    squareCreator = new GreenSquareCreator();
-                    triangleCreator = new GreenTriangleCreator();
+                    currentFactory = new GreenShapeFactory();
                     break;
                 default:
                     return;
@@ -60,20 +52,20 @@ namespace laba_RPM_2_090326
 
         private void AddCircle_Click(object sender, RoutedEventArgs e)
         {
-            if (circleCreator != null)
-                DrawingCanvas.Children.Add(circleCreator.CreateCircle().Draw());
+            if (currentFactory != null)
+                DrawingCanvas.Children.Add(currentFactory.CreateCircle().Draw());
         }
 
         private void AddSquare_Click(object sender, RoutedEventArgs e)
         {
-            if (squareCreator != null)
-                DrawingCanvas.Children.Add(squareCreator.CreateSquare().Draw());
+            if (currentFactory != null)
+                DrawingCanvas.Children.Add(currentFactory.CreateSquare().Draw());
         }
 
         private void AddTriangle_Click(object sender, RoutedEventArgs e)
         {
-            if (triangleCreator != null)
-                DrawingCanvas.Children.Add(triangleCreator.CreateTriangle().Draw());
+            if (currentFactory != null)
+                DrawingCanvas.Children.Add(currentFactory.CreateTriangle().Draw());
         }
     }
 }
