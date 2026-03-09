@@ -1,0 +1,29 @@
+﻿<Window x:Class="laba_RPM_2_090326.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:laba_RPM_2_090326"
+        mc:Ignorable="d"
+        Title="Factory Method Shapes" Height="450" Width="800">
+    <Grid>
+        <StackPanel Margin="10">
+            <TextBlock Text="Выберите цвет:" Margin="0,0,0,5"/>
+            <ComboBox x:Name="ColorSelector" SelectionChanged="ColorSelector_SelectionChanged">
+                <ComboBoxItem Content="Красный" Tag="Red" IsSelected="True"/>
+                <ComboBoxItem Content="Синий" Tag="Blue"/>
+                <ComboBoxItem Content="Зелёный" Tag="Green"/>
+            </ComboBox>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+                <Button Content="Круг" Click="AddCircle_Click" Width="70" Margin="5"/>
+                <Button Content="Квадрат" Click="AddSquare_Click" Width="70" Margin="5"/>
+                <Button Content="Треугольник" Click="AddTriangle_Click" Width="90" Margin="5"/>
+            </StackPanel>
+
+            <Separator Margin="0,10"/>
+
+            <WrapPanel x:Name="DrawingCanvas" />
+        </StackPanel>
+    </Grid>
+</Window>
