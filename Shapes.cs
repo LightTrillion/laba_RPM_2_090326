@@ -11,6 +11,7 @@ namespace laba_RPM_2_090326
 {
     public abstract class Figure
     {
+        // Фабричный метод
         public Color Color { get; set; }
 
         // Метод, создающий визуальный элемент для отображения
